@@ -29,6 +29,40 @@ class Stack{
         return temp;
     }
 
+
+
+}
+
+function  isBalancedParentheses(input){
+    const stack1 = new Stack();
+    const paraObj = {
+        "(" : ")",
+        "[" : "]",
+        "{" : "}",
+         }
+         
+         if((input[0] == "(" || input[0] == "{" || input[0] == "[") && input.length == 1){
+             return false
+         }
+         
+         
+    for(let i = 0; i < input.length; i++){
+        let char = input[i];
+        if(char == "(" || char == "{" || char == "["){
+            stack1.push(char);
+        }
+       else if(char == ")" || char == "}" || char == "]"){
+           let top = stack1.pop();
+           if(char !== paraObj[top]){
+               return false
+           }
+       }
+        
+    }
+    return stack1.isEmpty();
+    
+    
+    
 }
 
 let stack1 = new Stack(11);
