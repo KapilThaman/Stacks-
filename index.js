@@ -65,6 +65,20 @@ function  isBalancedParentheses(input){
     
 }
 
+function reverseString(input){
+    let stack1 = new Stack();
+    let reversedString = "";
+    
+    for(let i = 0; i < input.length; i++){
+            stack1.push(input[i]);
+    }
+    
+    while(!stack1.isEmpty()){
+        reversedString += stack1.pop();
+    }
+    return reversedString;
+}
+
 let stack1 = new Stack(11);
 stack1.push(12);
 stack1.push(13);
